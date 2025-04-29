@@ -1,4 +1,3 @@
-Certainly! Here's a sample `README.md` for your [web-monitoring](https://github.com/meowmet/web-monitoring) project that includes Netcat functionality. This README emphasizes ethical usage, provides clear usage instructions, and includes a legal disclaimer to ensure responsible use.
 
 ---
 
@@ -76,4 +75,3 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-Feel free to customize this README to better fit the specifics of your project. Let me know if you need further assistance or additional sections! 
