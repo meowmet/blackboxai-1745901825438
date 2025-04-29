@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Browser Monitor Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+    }
+    /* Sidebar shadow on right edge */
+    .sidebar {
+      box-shadow: inset -4px 0 6px -4px rgba(0,0,0,0.3);
+    }
+    /* Scrollbar for tables if needed */
+    .scrollbar-thin::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+      background-color: rgba(100, 100, 100, 0.3);
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body class="flex h-screen text-gray-900">
+
+  <!-- Sidebar -->
+  <aside class="sidebar bg-[#2E2E2E] w-1/6 min-w-[220px] flex flex-col text-gray-400">
+    <div class="h-16 flex items-center justify-center border-b border-gray-700">
+      <!-- Logo area blank/dark -->
+    </div>
+    <nav class="flex flex-col mt-6 space-y-6 px-4">
+      <a href="#" class="flex items-center space-x-3 text-white border-l-4 border-blue-500 pl-3 py-2">
+        <i class="fas fa-tachometer-alt fa-lg"></i>
+        <span class="font-semibold">Dashboard</span>
+      </a>
+      <a href="#" class="flex items-center space-x-3 hover:text-white py-2">
+        <i class="fas fa-broadcast-tower fa-lg"></i>
+        <span>Live Sessions</span>
+      </a>
+      <a href="#" class="flex items-center space-x-3 hover:text-white py-2">
+        <i class="fas fa-history fa-lg"></i>
+        <span>History Logs</span>
+      </a>
+      <a href="#" class="flex items-center space-x-3 hover:text-white py-2">
+        <i class="fas fa-ban fa-lg"></i>
+        <span>Blocked Sites</span>
+      </a>
+      <a href="#" class="flex items-center space-x-3 hover:text-white py-2">
+        <i class="fas fa-cog fa-lg"></i>
+        <span>Settings</span>
+      </a>
+      <a href="#" class="flex items-center space-x-3 hover:text-white py-2 mt-auto mb-6">
+        <i class="fas fa-sign-out-alt fa-lg"></i>
+        <span>Logout</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Main content -->
+  <main class="flex-1 flex flex-col bg-gray-50 overflow-auto p-8">
+    <!-- Top bar -->
+    <header class="flex justify-between items-center mb-8">
+      <h1 class="text-3xl font-bold text-[#1A1A1A]">Browser Monitor</h1>
+      <div class="flex items-center space-x-6 text-gray-500">
+        <a href="login.html" aria-label="Logout" title="Logout" class="hover:text-gray-700 transition-colors duration-200">
+          <i class="fas fa-sign-out-alt fa-lg"></i>
+        </a>
+        <button aria-label="Notifications" class="hover:text-gray-700 transition-colors duration-200">
+          <i class="fas fa-bell fa-lg"></i>
+        </button>
+        <button aria-label="User Profile" class="hover:text-gray-700 transition-colors duration-200">
+          <i class="fas fa-user-circle fa-lg"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Key Metrics Cards -->
+    <section class="grid grid-cols-4 gap-6 mb-8">
+      <!-- Card 1 -->
+      <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+        <span class="text-sm uppercase text-gray-500">Active Users</span>
+        <span class="text-4xl font-bold text-[#1A1A1A]">27</span>
+        <svg class="w-full h-8 mt-2" viewBox="0 0 100 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <polyline points="0,15 20,13 40,14 60,12 80,10 100,8" stroke="#3B82F6" stroke-width="2" fill="none" />
+        </svg>
+      </div>
+      <!-- Card 2 -->
+      <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+        <span class="text-sm uppercase text-gray-500">Sites Opened Today</span>
+        <span class="text-4xl font-bold text-[#1A1A1A]">315</span>
+        <svg class="w-full h-8 mt-2" viewBox="0 0 100 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <polyline points="0,12 20,15 40,10 60,14 80,8 100,12" stroke="#3B82F6" stroke-width="2" fill="none" />
+        </svg>
+      </div>
+      <!-- Card 3 -->
+      <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+        <span class="text-sm uppercase text-gray-500">Blocked Attempts</span>
+        <span class="text-4xl font-bold text-[#1A1A1A]">12</span>
+        <svg class="w-full h-8 mt-2" viewBox="0 0 100 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <polyline points="0,10 20,15 40,8 60,12 80,7 100,10" stroke="#3B82F6" stroke-width="2" fill="none" />
+        </svg>
+      </div>
+      <!-- Card 4 -->
+      <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+        <span class="text-sm uppercase text-gray-500">Warnings Issued</span>
+        <span class="text-4xl font-bold text-[#1A1A1A]">5</span>
+        <svg class="w-full h-8 mt-2" viewBox="0 0 100 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <polyline points="0,14 20,15 40,16 60,17 80,18 100,19" stroke="#3B82F6" stroke-width="2" fill="none" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- Live Browser Sessions Table and Recent Activity Panel -->
+    <section class="flex flex-col lg:flex-row gap-6 mb-8">
+      <!-- Live Browser Sessions Table -->
+      <div class="bg-white rounded-lg shadow-md p-6 flex-1 overflow-x-auto">
+        <h2 class="text-xl font-bold text-[#1A1A1A] mb-4">Live Browser Sessions</h2>
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="text-gray-500 uppercase text-xs border-b border-gray-300">
+              <th class="py-3 px-4">User</th>
+              <th class="py-3 px-4">Device</th>
+              <th class="py-3 px-4">IP Address</th>
+              <th class="py-3 px-4">Current Website</th>
+              <th class="py-3 px-4">Tabs Open</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="h-12 border-b border-gray-200 text-[#1A1A1A]">
+              <td class="py-3 px-4">JohnD</td>
+              <td class="py-3 px-4">PC</td>
+              <td class="py-3 px-4">192.168.1.15</td>
+              <td class="py-3 px-4">youtube.com</td>
+              <td class="py-3 px-4">5</td>
+            </tr>
+            <tr class="h-12 border-b border-gray-200 text-[#1A1A1A]">
+              <td class="py-3 px-4">LisaM</td>
+              <td class="py-3 px-4">Laptop</td>
+              <td class="py-3 px-4">192.168.1.20</td>
+              <td class="py-3 px-4">github.com</td>
+              <td class="py-3 px-4">3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Recent Activity Panel -->
+      <aside class="bg-white rounded-lg shadow-md p-6 w-full lg:w-80 flex flex-col">
+        <h2 class="text-xl font-bold text-[#1A1A1A] mb-4">Recent Activity</h2>
+        <div class="flex flex-col space-y-4 text-gray-600 text-sm">
+          <div>
+            <time class="block text-gray-500 text-xs mb-1">10:02 AM</time>
+            <p class="font-semibold text-[#1A1A1A]">JohnD opened stackoverflow.com</p>
+          </div>
+          <div>
+            <time class="block text-gray-500 text-xs mb-1">10:03 AM</time>
+            <p class="font-semibold text-[#1A1A1A]">LisaM visitatwliter.com <span class="text-red-600">(Blocked)</span></p>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Secondary Live Sessions Section -->
+    <section class="bg-white rounded-lg shadow-md p-6">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-bold text-[#1A1A1A]">Live Browser Sessions</h2>
+        <a href="live-sessions.html" class="text-blue-500 hover:underline">View Details →</a>
+      </div>
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="text-gray-500 uppercase text-xs border-b border-gray-300">
+            <th class="py-3 px-4">User</th>
+            <th class="py-3 px-4">Device</th>
+            <th class="py-3 px-4">IP Address</th>
+            <th class="py-3 px-4">Current Website</th>
+            <th class="py-3 px-4">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="h-12 border-b border-gray-200 text-[#1A1A1A]">
+            <td class="py-3 px-4">LisaM</td>
+            <td class="py-3 px-4">Laptop</td>
+            <td class="py-3 px-4">192.168.1.20</td>
+            <td class="py-3 px-4">youtube.com</td>
+            <td class="py-3 px-4">
+              <a href="live-sessions.html" class="inline-block bg-gray-200 text-gray-800 rounded-full px-4 py-1 text-sm hover:bg-gray-300 transition-colors duration-200">View Details</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>
